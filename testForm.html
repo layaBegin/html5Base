@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+</head>
+<body>
+<!--
+form 是一个容器，要提交的数据放在form的子元素中，有以下两个属性
+    action： 要提交到服务器的地址，如果服务器地址不存在，出现404错误
+    method：提交的表单的方式，有两个取值
+        post：参数不会显示在地址栏，相对更加安全
+        get：默认值，参数会在地址栏传递
+
+input 默认是一个文本框
+    name 属性：给表单项指定名字，名字是给服务器使用的，提交参数的名字
+    type 属性：指定输入框的类型，有以下取值:
+        text 是默认值，表示文本框
+        password 密码框，字符不可见
+        submit 提交按钮，用于将表单的数据提交给服务器端 value 修改按钮上文字
+-->
+<h1>用户注册</h1>
+<hr/>
+<form action="server_login" method="post">
+    <table>
+
+        <tbody>
+            <tr><td>用户名：</td><td><input type="text" name="username" placeholder="请输入用户名"></td></tr>
+            <tr><td>密码：</td><td><input type="password" name="password" placeholder="请输入密码"><td></tr>
+            <tr><td>邮箱：</td><td><input type="email" name="email" placeholder="请输入邮箱"></td></tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" name="sex" value="man" checked="checked"><span>男</span>
+                    <input type="radio" name="sex" value="woman" ><span>女</span>
+                </td>
+            </tr>
+            <tr>
+                <td>爱好：</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="1" ><span>游泳</span>
+                    <input type="checkbox" name="hobby" value="2" ><span>上网</span>
+                    <input type="checkbox" name="hobby" value="3" ><span>电影</span>
+                    <input type="checkbox" name="hobby" value="4" ><span>打球</span>
+                </td>
+            </tr>
+            <tr>
+                <td>学历：</td>
+                <td>
+                    <select name="edu" >
+                        <option value="1">初中</option>
+                        <option value="2">高中</option>
+                        <option value="3">大专</option>
+                        <option value="4" selected="selected">本科</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>出生日期：</td>
+                <td><input type="date" name="date"></td>
+            </tr>
+            <tr>
+                <td>照片：</td>
+                <td><input type="file" name="photo" value="选择文件" placeholder="未选择任何文件"></td>
+            </tr>
+            <tr>
+                <td>个人简介：</td>
+                <!--表单项元素：多行文本框（文本域）
+                id: 给javascript/css技术操作使用的
+                name: 给服务器使用，获取对应的数据
+                cols：设置显示列数
+                rows: 设置显示的行数
+                注意：标签体内容就是需要提交的数据
+            -->
+                <td><textarea placeholder="请输入个人简介" id="profile" name="profile" cols="20" rows="3"></textarea></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr align="center">
+
+                <td  align="cneter" colspan="2">
+                    <input type="submit"  value="登录">
+                    <input type="reset"  value="重置">
+                    <input type="image" src="img/1.jpg" height="30" align="center"><br/>
+                    <button>提交</button>
+                    <input type="button" value="普通按钮1">
+                    <!--隐藏域，不让用户看到，但是数据要提交给服务器-->
+                    <input type="hidden" name="id" value="100">
+                <td>
+
+            </tr>
+        </tfoot>
+    </table>
+</form>
+</body>
+</html>

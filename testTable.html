@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+</head>
+<body>
+<!--cellspacing:单元格之间的距离；cellpadding：单元格边框与内容之间的距离-->
+<table border="5px" width="500" cellspacing="10" cellpadding="20" >
+    <caption>联系人列表</caption>
+    <!--表格的头部-->
+    <thead >
+        <tr bgcolor="#8fbc8f" row>
+            <th width="100">姓名</th>
+            <th>电话</th>
+            <th>地址</th>
+        </tr>
+    </thead>
+    <span>呵呵 大</span>
+    <!--表格的主体:无论是否写了这个标签。浏览器都会解析生成，thead，tfoot非必须-->
+    <tbody>
+        <tr align="center" >
+            <td align="center">Bill Gates</td>
+            <td>238942-93742</td>
+            <td>西雅图</td>
+        </tr>
+        <tr align="center">
+            <td align="center" rowspan="2"> Steven Jobs</td>
+            <td>8923478923</td>
+            <td>鬼谷</td>
+        </tr>
+        <tr align="center">
+            <td align="center" rowspan="2">巴菲 特</td>
+            <td>2389747 8923</td>
+            <td>紐約</td>
+        </tr>
+    </tbody>
+    <!--表格脚部-->
+    <tfoot>
+        <tr align="center">
+            <!--rowspan 跨几行 -->
+            <td rowspan="2">统计</td>
+            <!--colspan:跨几列 -->
+            <td colspan="1">3个</td>
+        </tr>
+
+    </tfoot>
+</table>
+</body>
+</html>
