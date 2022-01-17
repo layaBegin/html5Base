@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+    <style>
+        table {
+            /*去掉单元格之间的间隔*/
+            border-collapse: collapse;
+            /*border-width: 3px;
+            border-style: solid;
+            border-color: gray;*/
+        }
+
+        td {
+            border-width: 2px;
+            border-style: groove;
+            border-color: gray;
+            /*内边距*/
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<table>
+
+</table>
+</body>
+<script>
+
+    let line = window.prompt("请输入行数")
+    let iLine = parseInt(line)
+    if ( iLine > 0) {
+        document.write("<table >")
+
+        for (let i = 1; i <= iLine; i++) {
+            let hang = ""
+            for (let j = 1;j <=i;j++){
+                hang +=`<td>${j}&times;${i}=${j*i}</td>`
+            }
+            document.write(`<tr>${hang}</tr>`)
+        }
+        document.write("</table>")
+
+    }
+</script>
+</html>

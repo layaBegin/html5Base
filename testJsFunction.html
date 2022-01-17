@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    /**
+     * 每个函数的内部都有一个隐藏的数组，名字叫arguments
+     * 调用过程：
+     * 1. 将实参放到arguments的数组中
+     * 2. 函数执行的时候从arguments的数组中去取值
+     * sum(1,2) -> arguments[0], arguments[1] -> a, b
+     */
+    function sum(a, b) {
+        let len = arguments.length
+        for (let i = 0; i < len; i++) {
+            document.write(`i:"${arguments[i]}<br/>`)
+        }
+        document.write(`a:${a}`)
+        document.write(`b:${b}`)
+    }
+
+    //sum(11,22,33);  //多了的时候，多出来的就不用了
+    sum(90);  //少的时候，变量值就是undefined
+</script>
+</html>

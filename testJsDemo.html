@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        img{
+            width: 300px;
+        }
+        div{
+            background-image: linear-gradient(to right,red,green);
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<img id="image" src="img/0.jpg">
+
+<div>
+    <p>说好的渐变呢</p>
+</div>
+</body>
+<script type="text/javascript">
+    let i = 0
+    let funcLunbo = ()=>{
+        let img =  document.getElementById("image")
+        img.src = `img/${i%3}.jpg`
+        i++
+
+    }
+
+    //setInterval(funcLunbo,2000)
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js代码</title>
+</head>
+<body>
+
+</body>
+<!--
+script标签的说明：
+1. 所有的js代码必须放在script标签中才能运行，也可以单独创建一个js文件，使用的时候导入
+2. script一定是一个有主体的标签，如果没有脚本也要定成有主体的
+3. 如果有多个script会依次执行所有的脚本
+4. script标签可以出现在网页的任何部分，甚至在html之外
+5. 建议每条语句以分号结束，每条语句一行，分号可以省略
+-->
+<script type="text/javascript" src="js/out.js"></script>
+<script type="text/javascript" src="js/score.js"></script>
+<script>
+    for (let i = 0; i < 2; i++) {
+        document.write("<h1>hello ,js</h1>")
+    }
+    let c = 3.1
+    document.write(typeof c + "<br/>")
+    let date= new Date()
+    document.write(`date:${date}`)
+</script>
+</html>

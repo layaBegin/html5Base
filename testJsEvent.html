@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<input type="button" id="a" value="按钮A" onclick="onAClick()">
+<input type="button" id="b" value="按钮B">
+<input type="button" id="c" value="双击按钮c" ondblclick="on2lclick()">
+
+<div>
+复制：<input type="text" value="呵呵回答" id="i"><br/>
+复制：<input type="text" id="ii"><br/>
+<input type="button" value="单击复制/双击清除" onclick="onCopy()" ondblclick="onClear()"><br/>
+
+获得焦点：<input type="text" value="呵呵回答" id="fou" onfocus="onF()" onblur="onB()" onchange="onCh()"><br/>
+
+</div>
+
+<div>
+    <select id="city">
+        <option >广州</option>
+        <option>深圳</option>
+        <option>佛山</option>
+    </select>
+    <input type="text" id="case" value="anc">
+</div>
+</body>
+
+<script type="text/javascript">
+    onAClick = function () {
+        alert("点击A")
+    }
+    on2lclick = ()=>{
+        alert("双击666")
+    }
+
+    document.getElementById("b").onclick = ()=>{
+        alert("点击B")
+    }
+    //整个网页加载完毕后会执行onLoad,window.可以省略
+     window.onload = ()=>{
+        alert("网页加载完了")
+    }
+
+    onCopy = ()=>{
+        let str  = document.getElementById("i").value
+        document.getElementById("ii").value = str;
+    }
+    onClear = function () {
+        document.getElementById("i").value  = ""
+        document.getElementById("ii").value = "";
+    }
+
+    onF = ()=>{
+        console.log("获得焦点")
+    }
+    onB = ()=>{
+        console.log("失去焦点")
+    }
+    onCh = ()=>{
+        console.log("内容改变")
+
+    }
+
+    document.getElementById("city").onchange = function () {
+        let value = this.value
+        console.log("改变："+value)
+    }
+    document.getElementById("case").onblur = function () {
+        this.value = this.value.toUpperCase()
+    }
+</script>
+</html>

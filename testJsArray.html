@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr1 = [1,3,4]
+    let arr2 = ["fe","fc","df"]
+
+    let arr3 = arr1.concat(arr2)
+    document.write(`arr3:${arr3}<br/>`)
+    arr3.reverse()
+    document.write(`arr3:${arr3}<br/>`)
+    let str = arr3.join("<>")
+    document.write(`join:${str}<br/>`)
+    let arr4= str.split("<>")
+    document.write(`split:${arr4}<br/>`)
+    //如果是整数，需要指明比较器
+    arr4.sort((a,b)=>{
+        return b - a
+    })
+    arr2.sort()
+    document.write(`sort:${arr2}<br/>`)
+    arr2.push("2nd")
+    document.write(`sort:${arr2}<br/>`)
+    let popstr = arr4.pop()
+    document.write(`popstr:${popstr}<br/>`)
+    document.write(`arr4:${arr4}<br/>`)
+    let unshiftstr = arr4.unshift("hehe")
+    document.write(`unshiftstr:${unshiftstr}<br/>`)
+    document.write(`arr4:${arr4}<br/>`)
+    let shiftstr = arr4.shift()
+    document.write(`shiftstr:${shiftstr}<br/>`)
+    document.write(`arr4:${arr4}<br/>`)
+
+    //forEach ,直接对源数组操作
+    arr4.forEach((value, index, array)=>{
+        console.log(`index:${index},value:${value},array:${array}`)
+        return arr4[index] = value + "for"
+    })
+    //map ,返回新的数组，原数组无影响
+    let arr5 = arr4.map((value, index, array)=>{
+        return value + "hehe"
+    })
+    document.write(`map arr4:${arr4}<br/>`)
+    document.write(`map arr5:${arr5}<br/>`)
+    //过滤，返回新的数组，原数组不变
+    let arr6 = arr4.filter((value)=>{
+        if (value.indexOf("d") > -1){
+            return true
+        }else {
+            return false
+        }
+    })
+    document.write(`filter arr6:${arr6}<br/>`)
+
+    let arrSlice = arr4.slice(2,4)
+    document.write(`slice arr4:${arr4}<br/>`)
+    document.write(`arrSlice:${arrSlice}<br/>`)
+    //
+    let arrSplice = arr4.splice(2,3,["heh","da"])
+    document.write(`splice arr4:${arr4}<br/>`)
+    document.write(`splice arrSplice:${arrSplice}<br/>`)
+
+</script>
+</html>
