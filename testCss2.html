@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展选择器</title>
+
+    <style>
+        /*层级选择器*/
+        div span{
+            color: red;
+        }
+
+        /*属性选择器，优先级高于层级选择器*/
+        [title]{
+            color: darkseagreen;
+        }
+        /*同是属性选择器，和先后有关，后面覆盖前面*/
+        [title="hehe"]{
+            color: blue;
+        }
+        h2[title="hehe"]{
+            color: goldenrod;
+        }
+        h4[id="shu"]{
+            color: dodgerblue;
+        }
+        /*交集选择器：类型要相同*/
+
+        h4.h{
+            color: darkgrey;
+        }
+        h4#jiao{
+            color: deeppink;
+        }
+
+        /*并集选择器：类型要相同*/
+        [title="hehe"],[title="aaa"]{
+            color: rebeccapurple;
+        }
+        h4,li{
+            color: firebrick;
+        }
+
+    </style>
+    <style>
+        body {
+            /* !*背景色*!
+                background-color: orange;
+             !*背景图片*!
+             background-image: url("img/girl1.jpg");
+             !*平铺方式*!
+             background-repeat: repeat;
+             !*起始平铺的位置*!
+             background-position: 50px 50px;*/
+            /*背景图片的大小，只写宽，高度会等比例缩放*/
+            background-size: 300px;
+            background-color: orange;
+            background-image: url("img/1.jpg");
+            background-repeat: repeat;
+            background-position: 50px 50px;
+            /*简写*/
+            /*background: orange url("img/1.jpg") repeat 50px 50px ;*/
+        }
+    </style>
+</head>
+<body>
+<!--
+层级选择器：
+    通过元素的层级关系去选择元素，子子孙孙都是起作用的，不一定是子元素
+    语法：
+        父选择器 子孙选择器
+
+属性选择器：
+    通过属性来选择元素
+    语法：
+    1. [属性名]  只要有这个属性名的元素就会被选中
+    2. [属性名=属性值] 不但要有这个属性名，而且值还要相等
+    3. 标签名[属性名=属性值] 不但要有这个属性名，而且值还要相等，而且标签还要相同
+并集选择器：
+    同时使用多个选择器
+    语法：
+        选择器1,选择器2
+
+交集选择器：
+    同时满足两个条件，有以下2种语法：
+    1. 标签名#ID名   既是这个标签，又有这个id
+    2. 标签名.类名   既是这个标签，又有这个类名
+    注：标签名后面不要有空格
+
+-->
+
+<div>
+    <span title="hehe">div span 层级选择器，两个都要有，而且是父子、父孙关系</span>
+    <p><span>父孙</span>标签</p>
+</div>
+<h2 title="hehe">试下属性选择器</h2>
+<a title="aaa" href="testCss1.html">a标签测试属性选择器</a><br/>
+<h3  title="aaa">h3 测试并集选择器</h3>
+<h4>h4测并集</h4>
+<ol>
+    <li>红雷梦</li>
+</ol>
+<h4 class="h">h4测交集</h4>
+<h4 id="jiao">h4测交,用h4#id</h4>
+<h4 id="shu">h4测交,测属性</h4>
+</body>
+</html>

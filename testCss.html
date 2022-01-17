@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS初体验，定义样式的3方式</title>
+    <!--
+   所有的CSS样式放在style标签里面
+   注释：与Java中多行注释一样的，只有这种
+   2. 内部样式：
+    放在网页中style标签中，对整个网页都起作用
+   -->
+    <style>
+        h2{
+            color: red;
+            background-color: darkseagreen;
+        }
+
+    </style>
+
+    <!--
+    3. 外部样式
+    放在单独的css文件中，可以对多个网页起作用，可以重用。
+    必须使用link标签导入，属性：
+        href：指定要导入的外部样式的名字
+        rel：指定网页与外部文件关系，这是一个样式表
+    -->
+    <link href="css/outCss.css" rel="stylesheet">
+
+
+</head>
+<body>
+<!--
+按样式所处的位置分成三种：
+1. 行内样式：
+  以style的属性存在标签的开头，只对这一个标签起作用,级别最高
+-->
+<h2 style="color: gold">学生列表</h2>
+<table>
+    <tr>
+        <td>123q23</td>
+        <td>123q23</td>
+        <td>123q23</td>
+    </tr>
+    <tr>
+        <td>123q23</td>
+        <td>123q23</td>
+        <td>123q23</td>
+    </tr>
+    <tr>
+        <td>123q23</td>
+        <td>123q23</td>
+        <td>123q23</td>
+    </tr>
+</table>
+<br/>
+<table>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>张三</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>李四</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王五</td>
+        <td>28</td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>
