@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM树的操作</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border-width: 1px;
+            border-color: gray;
+            border-style: solid;
+            width: 400px;
+            text-align: center;
+        }
+        th{
+            border-width: 1px;
+            border-color: gray;
+            border-style: solid;
+        }
+        td{
+            border-width: 1px;
+            border-color: gray;
+            border-style: solid;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th><input type="checkbox" class="checkBox" onclick="selectAll()"></th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="tbody1">
+
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="2">
+            </td>
+            <td colspan="2">
+
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
+<table>
+    <tr>
+
+学号：<input type="text" id="id">姓名：<input type="text" id="name">
+        <input type="button" value="添加" onclick="addStudent()">
+    </tr>
+</table>
+</body>
+<script>
+    //let tr = document.createElement("<tr></tr>")
+
+    selectAll = function(){
+        console.log("==进入checkbox回调")
+        let checkboxs = document.getElementsByClassName("checkBox")
+        for(let checkBox of checkboxs){
+            checkBox.checked = true
+        }
+    }
+    deleteStudent = function(btn){
+        let tr = btn.parentElement.parentElement
+
+        let name = btn.parentElement.previousElementSibling.innerText;
+        if (confirm("真的要删除"+ name + "吗？")){
+            tr.remove()
+
+        }else {
+
+        }
+    }
+
+
+
+    addStudent = function () {
+        let id = document.getElementById("id").value
+        let name = document.getElementById("name").value
+        console.log("id:"+id)
+        console.log("name:"+name)
+        if (id.trim() === "" || name.trim() === ""){
+            alert("学号或名字不能为空")
+        }
+        let tr1 = document.createElement("tr")
+        tr1.innerHTML = `
+        <td>
+            <input type="checkbox" class="checkBox">
+        </td>
+        <td>
+            ${id}
+        </td>
+        <td>
+            ${name}
+        </td>
+        <td>
+            <input type="button" value="删除" onclick="deleteStudent(this)">
+        </td>`
+        let tbody1 = document.getElementById("tbody1")
+        tbody1.appendChild(tr1)
+    }
+</script>
+</html>

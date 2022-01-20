@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+
+<p id="time"></p>
+<input type="button" id="btnStart" value="开始" onclick="onStart()"><br/>
+<input type="button" id="btnStop" value="暂停" onclick="onPause()"><br/>
+
+</body>
+<script type="text/javascript">
+    let now = new Date();
+    document.write(`本地时间格式化：${now.toLocaleString()}<br/>`)
+    document.write(`年：${now.getFullYear()}<br/>`)
+    document.write(`月：${now.getMonth()}<br/>`)
+    document.write(`日：${now.getDay()}<br/>`)
+    document.write(`小时：${now.getHours()}<br/>`)
+    document.write(`分钟：${now.getMinutes()}<br/>`)
+    document.write(`秒：${now.getSeconds()}<br/>`)
+    document.write(`毫秒：${now.getMilliseconds()}<br/>`)
+    document.write(`1970.1.1时间毫秒值：${now.getTime()}<br/>`)
+    let pTime = document.getElementById("time")
+
+    window.onload = ()=>{
+        pTime = document.getElementById("time")
+        pTime.innerText = new Date().toLocaleString()
+    }
+    let timer;
+
+    let funcInterval = ()=>{
+        console.log("==进入定时器")
+        pTime.innerText = new Date().toLocaleString()
+    }
+    //让元素不可用的属性是：disabled = true
+    onStart = function () {
+        document.getElementById("")
+        timer = setInterval(funcInterval,1000)
+    }
+    onPause = function () {
+        clearInterval(timer)
+    }
+</script>
+</html>

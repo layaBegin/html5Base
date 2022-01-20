@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js改变样式</title>
+
+    <style>
+        .second{
+            color: green;
+            font-family: 华文中宋;
+            font-size: medium;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .third{
+            color: #0066FF;
+            font-family: 方正舒体;
+            font-size: medium;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<p id="a" >这是第一个段落</p>
+<p id="b" >这是第2个段落</p>
+
+</body>
+<script type="text/javascript">
+    let elementA = document.getElementById("a")
+    elementA.style = "color: red ;font-size: 20px;font-family: 黑体"
+
+    let elementB = document.getElementById("b")
+    elementB.className = "third"
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹窗</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--id  是唯一的，name，class 等属性不唯一 -->
+<input type="button" value="通过标签添加背景" onclick="addBg()">
+<hr/>
+<table>
+    <tr>
+        <td>80</td>
+        <td>80</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>80</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>80</td>
+        <td>80</td>
+    </tr>
+</table>
+<hr/>
+
+<input type="button" value="通过name选中所有商品" name="tanchuang" onclick="addStore()">
+<hr/>
+<input type=checkbox value="x" name="store" ><span>洗衣机</span>
+<input type=checkbox value="d" name="store" ><span>电冰箱</span>
+<input type=checkbox value="k" name="store" ><span>空调</span>
+<hr/>
+<input type="button" value="通过类名给A标签添加地址"  onclick="addHref()">
+<a  class="ahref">标签1</a>
+<a class="ahref">标签2</a>
+<a class="ahref">标签3</a>
+
+</body>
+<script type="text/javascript">
+    // document.getElementById("tc").onclick = function () {
+    //     console.log("==进入onClick")
+    //     if (confirm("真的要删除吗")){
+    //         alert("删除成功")
+    //     }else{
+    //         alert("取消删除")
+    //     }
+    // }
+
+    addBg = function(){
+        let trs = document.getElementsByTagName("tr")
+        for (let i = 0; i < trs.length; i++) {
+            if (i%2 === 0){
+                trs[i].bgColor = "darkseagreen"
+            }else {
+                trs[i].bgColor = "green"
+            }
+            console.log("i:" + trs[i])
+
+        }
+    }
+
+    addStore = function(){
+        let stores = document.getElementsByName("store")
+        for (let store of stores) {
+            store.checked = true
+
+        }
+    }
+    addHref = function () {
+        let ahrefs = document.getElementsByClassName("ahref")
+        for (let ahref of ahrefs) {
+            ahref.href = "http://www.baidu.com"
+
+        }
+    }
+
+
+</script>
+</html>
